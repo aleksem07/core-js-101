@@ -324,8 +324,10 @@ function getPositivesCount(arr) {
  *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(/* arr */) {
-  throw new Error('Not implemented');
+function sortDigitNamesByNumericOrder(arr) {
+  const allNumb = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  arr.sort((a, b) => allNumb.indexOf(a) - allNumb.indexOf(b));
+  return arr;
 }
 
 /**
@@ -455,8 +457,15 @@ function sortCitiesArray(/* arr */) {
  *           [0,0,0,1,0],
  *           [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
+function getIdentityMatrix(n) {
+  const matrix = [];
+
+  for (let i = 0; i < n; i += 1) {
+    const row = Array(n).fill(0);
+    row[i] = 1;
+    matrix.push(row);
+  }
+  return matrix;
 }
 
 /**
